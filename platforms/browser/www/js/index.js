@@ -6,7 +6,7 @@ function onDeviceReady() {
 
     applyDeviceData();
     checkConnection();
-    
+  
     navigator.geolocation.watchPosition(geolocationSuccess, geolocationError);
     
     document.addEventListener("offline", onOffline, false);
@@ -14,6 +14,11 @@ function onDeviceReady() {
     $("#mediabtn").click(audioFunction);    
     $("#camera-btn").click(getPicture);
     $("#addPicture").click(sendPictureRequest);
+    $("#buttonRegisterUser").click(getData);
+}
+
+function getData() {
+    $('#buttonRegisterUser').view('#viewLogin');
 }
 
 function getPicutre() {
@@ -62,6 +67,7 @@ function sendPictureRequest() {
         }
     });
 }
+
 function loadHomePage(){
     const homePage = $("#homePage");
     $.mobile.pageContainer.pageContainer("change", homePage,{});
@@ -146,6 +152,7 @@ function onSuccess(params) {
 function onError(params) {
     alert(params);
 }
+
 function startApp() {
     const kinveyBaseUrl = "https://baas.kinvey.com/";
     const kinveyAppKey = "kid_rJ87qhF8d";
