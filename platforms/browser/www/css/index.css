@@ -91,7 +91,11 @@ h1 {
     }
 }
 
-header a {
+header {
+    text-align: center;
+}
+
+header #menu a {
     vertical-align: center;
     text-decoration: none;
     color: black;
